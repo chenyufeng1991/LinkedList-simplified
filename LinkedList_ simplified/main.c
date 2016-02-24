@@ -17,12 +17,14 @@ typedef struct LinkNode{
     struct LinkNode *next;
 }Node;
 
+//链表的初始化
 void initList(Node *pHead){
 
     pHead = NULL;
     printf("%s函数执行,链表初始化完成\n",__FUNCTION__);
 }
 
+//创建线性表
 Node *createList(Node *pHead){
 
     Node *p1;
@@ -62,6 +64,7 @@ Node *createList(Node *pHead){
     return pHead;
 }
 
+//打印链表
 void printList(Node *pHead){
 
     if (pHead == NULL) {
@@ -77,6 +80,7 @@ void printList(Node *pHead){
 
 }
 
+//清除链表
 void clearList(Node *pHead){
 
     Node *pNext;
@@ -92,6 +96,7 @@ void clearList(Node *pHead){
     }
 }
 
+//返回链表的长度
 int sizeList(Node *pHead){
 
     int i = 0;
@@ -109,6 +114,7 @@ int sizeList(Node *pHead){
     return i;
 }
 
+//判断链表是否为空
 void isEmptyList(Node *pHead){
 
     if (pHead == NULL) {
@@ -118,6 +124,7 @@ void isEmptyList(Node *pHead){
     }
 }
 
+//取出链表第pos个位置的元素
 int getElement(Node *pHead,int pos){
 
     int i = 0;
@@ -144,6 +151,7 @@ int getElement(Node *pHead,int pos){
     return 0;
 }
 
+//从单链表中查找具有给定值x的第一个元素，若查找成功则返回该结点data域的存储地址，否则返回NULL
 elemType *getElementArrr(Node *pHead,int x){
 
     if (pHead == NULL) {
@@ -167,6 +175,7 @@ elemType *getElementArrr(Node *pHead,int x){
     return &(pHead->element);
 }
 
+//把单链表中第pos个结点的值修改为x的值，若修改成功返回１，否则返回０
 elemType modifyList(Node *pHead,int pos,int x){
 
     int i = 0;
@@ -193,6 +202,7 @@ elemType modifyList(Node *pHead,int pos,int x){
     return 1;
 }
 
+//向单链表的表头插入一个元素
 Node *InsertHeadList(Node *pHead,int x){
 
     Node *pInsert;
@@ -214,6 +224,7 @@ Node *InsertHeadList(Node *pHead,int x){
     return pHead;
 }
 
+//向单链表的末尾添加一个元素
 Node *InsertEndList(Node *pHead,int x){
 
     Node *pMove;
